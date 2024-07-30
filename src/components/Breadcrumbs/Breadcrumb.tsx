@@ -10,51 +10,47 @@ import {
   CalendarMonthRegular,
   bundleIcon,
 } from "@fluentui/react-icons";
+import { HTMLAttributes } from "react";
 
 const CalendarMonth = bundleIcon(CalendarMonthFilled, CalendarMonthRegular);
-const path = "https://www.bing.com/";
-import { HTMLAttributes } from "react";
-    
+
+export interface BreadcrumbItemData {
+  title: string;
+  path: string;
+  icon?: JSX.Element;
+}
 
 export interface BreadcrumbbProps extends HTMLAttributes<HTMLDivElement> {
   variant?: "large" | "medium" | "small";
-  data: { title: string; path: string }[];
+  data: BreadcrumbItemData[];
   separator?: string;
 }
 
 export const Breadcrumbb = ({
-    variant = "medium",
-    data,
-    separator = ">",
-  }: BreadcrumbbProps) => {
+  variant = "medium",
+  data,
+  separator = ">",
+}: BreadcrumbbProps) => {
   const variants = {
-    large: "w-64 h-20 justify-content:start",
-    medium: "w-48 h-40",
-    small: "w-32 h-28",
+    large: "text-lg space-x-4 font-semibold",
+    medium: "text-base space-x-4 font-medium",
+    small: "text-sm space-x-2 font-normal",
   };
 
-
-    return (
-      <Breadcrumb aria-label="Breadcrumb default example">
-        <BreadcrumbItem>
-          <BreadcrumbButton href={path}>Item 1</BreadcrumbButton>
-        </BreadcrumbItem>
-        <BreadcrumbDivider />
-        <BreadcrumbItem>
-          <BreadcrumbButton href={path} icon={<CalendarMonth />}>
-            Item 2
-          </BreadcrumbButton>
-        </BreadcrumbItem>
-        <BreadcrumbDivider />
-        <BreadcrumbItem>
-          <BreadcrumbButton href={path}>Item 3</BreadcrumbButton>
-        </BreadcrumbItem>
-        <BreadcrumbDivider />
-        <BreadcrumbItem>
-          <BreadcrumbButton href={path} current>
-            Item 4
-          </BreadcrumbButton>
-        </BreadcrumbItem>
-      </Breadcrumb>
-    );
-  };
+  return (
+    <Breadcrumb aria-label="Breadcrumb" className={variants[variant]}>
+      {data.map((item, index) => (
+        <React.Fragment key={index}>
+          <BreadcrumbItem>
+            <BreadcrumbButton href={item.path} icon={item.icon}>
+              {item.title}
+            </BreadcrumbButton>
+          </BreadcrumbItem>
+          {index < data.length - 1 && (
+            <BreadcrumbDivider>{separator}</BreadcrumbDivider>
+          )}
+        </React.Fragment>
+      ))}
+    </Breadcrumb>
+  );
+};
