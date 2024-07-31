@@ -21,6 +21,7 @@ export interface ModalProps {
 	 * Modal corner type, rounded or squared
 	 */
 	type: "rounded" | "simple";
+	children?: React.ReactNode;
 	onClick?: () => void;
 }
 
@@ -34,6 +35,7 @@ export const Modal = ({
 	type = "rounded",
 	positiveLabel = "Success",
 	negativeLabel = "Cancel",
+	children,
 	...props
 }: ModalProps) => {
 	const [showModal, setShowModal] = useState(false);
@@ -91,8 +93,8 @@ export const Modal = ({
 								>
 									{header}
 								</h3>
-
-								<div className="flex items-center justify-around">
+								{children}
+								<div className="flex items-center justify-between">
 									<button
 										type="button"
 										className={`${
