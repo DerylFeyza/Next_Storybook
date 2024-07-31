@@ -12,10 +12,19 @@ const meta = {
 	},
 	// This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
 	argTypes: {
+		type: {
+			control: { type: "radio", options: ["rounded", "simple"] },
+		},
 		variant: {
 			control: {
-				type: "select",
+				type: "radio",
 				options: ["dark", "light"],
+			},
+		},
+		size: {
+			control: {
+				type: "select",
+				options: ["small", "medium", "large"],
 			},
 		},
 	},
@@ -31,8 +40,10 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Form: Story = {
 	args: {
-		header: "Gay SEX!!",
+		header: "skebede",
 		variant: "dark",
+		size: "medium",
+		type: "rounded",
 		positiveLabel: "Success",
 		negativeLabel: "Cancel",
 	},
