@@ -18,11 +18,31 @@ const meta = {
 export default meta;
 type Skibidi = StoryObj<typeof meta>;
 
-export const Succsess : Skibidi = {
+export const Default : Skibidi = {
+	args:{
+		type : "info",
+		size: "medium",
+		variant: "default",
+		title:"Information!",
+		message: "your gyatt have been transported to another region"
+	},
+}
+
+export const Success : Skibidi = {
 	args:{
 		type : "info",
 		size: "medium",
 		variant: "success",
+		title:"Success!",
+		message: "your gyatt have been transported to another region"
+	},
+}
+
+export const Danger : Skibidi = {
+	args:{
+		type : "info",
+		size: "medium",
+		variant: "danger",
 		title:"Information !",
 		message: "your sibidikasdnansd"
 	},
