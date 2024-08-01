@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { Button } from "@/stories/Button";
+import { StoryBreadcrumb } from "@/components/Breadcrumbs/Breadcrumb";
 import "../../app/globals.css";
 export interface ModalProps {
 	/**
@@ -46,6 +47,21 @@ export const Modal = ({
 					label="Toggle Modal"
 					onClick={() => setShowModal(true)}
 					primary={true}
+				/>
+				<StoryBreadcrumb
+					variant="medium"
+					data={[
+						{
+							title: "Home",
+						},
+						{
+							title: "Overview",
+						},
+						{
+							title: "Details",
+						},
+					]}
+					onClick={() => setShowModal(true)}
 				/>
 			</div>
 			{showModal && (
