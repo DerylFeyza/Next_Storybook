@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import { fn } from "@storybook/test";
 import { Toast } from "./Toast";
 
 const meta = {
@@ -13,6 +14,7 @@ const meta = {
 		variant: {control:"radio"},
 		size:{control:"radio"}
 	},
+	args : {onClose:(fn)},
 }satisfies Meta<typeof Toast>
 
 export default meta;

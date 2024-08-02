@@ -7,7 +7,7 @@ export interface Toaster {
 	size?: "small" | "medium" | "large";
 	title: string;
 	message: string;
-	onClose: () => void; // Add onClose prop
+	onClose: () => void; 
 }
 
 export const Toast: React.FC<Toaster> = ({
@@ -16,7 +16,7 @@ export const Toast: React.FC<Toaster> = ({
 	size = "medium",
 	title,
 	message,
-	onClose, // Destructure onClose
+	onClose,
 }: Toaster) => {
 	const variantStyles = {
 		success: "bg-green-200 text-green-700 border-green-500",
@@ -45,12 +45,14 @@ export const Toast: React.FC<Toaster> = ({
 				typeStyles,
 			].join(" ")}
 		>
+			<div>
 			<button
 				className="absolute top-0 right-0 mr-2 mt-2 font-semibold"
-				onClick={onClose} // Call onClose when clicked
+				onClick={onClose} type="button"
 			>
 				X
 			</button>
+			</div>
 			<h1 className="font-bold capitalize">{title}</h1>
 			{type === "notif" && (
 				<p className={["border-t my-1", variantStyles].join(" ")}></p>
