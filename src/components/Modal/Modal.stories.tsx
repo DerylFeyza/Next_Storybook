@@ -45,6 +45,7 @@ export const Light: Story = {
 		variant: "light",
 		size: "medium",
 		type: "rounded",
+		position: "left",
 		positiveLabel: "Success",
 		negativeLabel: "Cancel",
 		children: (
@@ -61,6 +62,7 @@ export const Dark: Story = {
 		variant: "dark",
 		size: "medium",
 		type: "rounded",
+		position: "left",
 		positiveLabel: "Success",
 		negativeLabel: "Cancel",
 		children: (
@@ -77,6 +79,7 @@ export const DarkForm: Story = {
 		variant: "dark",
 		size: "medium",
 		type: "rounded",
+		position: "left",
 		positiveLabel: "Success",
 		negativeLabel: "Cancel",
 		children: (
@@ -122,6 +125,7 @@ export const LightForm: Story = {
 		variant: "light",
 		size: "medium",
 		type: "rounded",
+		position: "left",
 		positiveLabel: "Success",
 		negativeLabel: "Cancel",
 		children: (

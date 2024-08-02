@@ -13,6 +13,7 @@ export interface ModalProps {
 	 * Primary button text
 	 */
 	positiveLabel: string;
+	position: "left" | "center";
 	/**
 	 * Cancel button text
 	 */
@@ -33,6 +34,7 @@ export const Modal = ({
 	variant = "light",
 	size = "medium",
 	type = "rounded",
+	position = "left",
 	positiveLabel = "Success",
 	negativeLabel = "Cancel",
 	children,
@@ -42,11 +44,6 @@ export const Modal = ({
 	return (
 		<div className="flex items-center justify-center min-h-60">
 			<div>
-				<Button
-					label="Toggle Modal"
-					onClick={() => setShowModal(true)}
-					primary={true}
-				/>
 				<StoryBreadcrumb
 					variant="medium"
 					data={[
@@ -103,11 +100,15 @@ export const Modal = ({
 								</button>
 							</div>
 							<div className="space-y-6 px-6 lg:px-8 pb-4 sm:pb-6 xl:pb-8">
-								<h3
-									className={`text-xl font-medium  ${variant === "dark" ? "text-white" : "text-black"}`}
+								<div
+									className={`${position === "center" ? "text-center" : ""}`}
 								>
-									{header}
-								</h3>
+									<h3
+										className={`text-xl font-medium  ${variant === "dark" ? "text-white" : "text-black"}`}
+									>
+										{header}
+									</h3>
+								</div>
 								{children}
 								<div className="flex items-center justify-between">
 									<button
