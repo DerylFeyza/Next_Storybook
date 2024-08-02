@@ -33,7 +33,7 @@ export const Toast:React.FC<Toaster> = ({type="info", variant = "default", size 
                 <p className="absolute top-0 right-0 mr-8 mt-5 font-semibold">X</p>
             </div>
             <h1 className="font-bold capitalize">{title}</h1>
-            {type === "notif" && <div><hr style={{ backgroundColor: '#000', height: '1px', border: 'none' }} /></div>}
+            {type === "notif" &&<p className={["border-t my-1", variantStyles].join(" ")}></p>}
             <p className="font-semibold capitalize">{message}</p>
         </div>
     );
