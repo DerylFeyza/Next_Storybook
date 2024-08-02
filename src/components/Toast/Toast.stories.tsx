@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Toast } from "./Toast";
 
 const meta = {
-    title: "Example/Toast",
+    title: "Those who know/Toast",
 	component: Toast,
 	parameters: {
 		layout: "centered",
@@ -34,7 +34,7 @@ export const Success : Skibidi = {
 		size: "medium",
 		variant: "success",
 		title:"Success!",
-		message: "your gyatt have been transported to another region"
+		message: "Skibidi toilet"
 	},
 }
 
@@ -43,8 +43,8 @@ export const Danger : Skibidi = {
 		type : "info",
 		size: "medium",
 		variant: "danger",
-		title:"Information !",
-		message: "your sibidikasdnansd"
+		title:"Danger!",
+		message: "Skibidi's breaching the contract!"
 	},
 }
 
@@ -53,7 +53,7 @@ export const Warn : Skibidi = {
 		type : "info",
 		size: "medium",
 		variant: "warning",
-		title:"Information !",
-		message: "your sibidikasdnansd"
+		title:"Warning!",
+		message: "penetration will occur soon!"
 	},
 }
