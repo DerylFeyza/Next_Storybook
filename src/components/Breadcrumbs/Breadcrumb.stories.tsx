@@ -10,7 +10,7 @@ import {
 const CalendarMonth = bundleIcon(CalendarMonthFilled, CalendarMonthRegular);
 
 const meta: Meta<typeof StoryBreadcrumb> = {
-	title: "Components/Breadcrumbs",
+	title: "Molecules/Breadcrumbs",
 	component: StoryBreadcrumb,
 	parameters: {
 		layout: "centered",

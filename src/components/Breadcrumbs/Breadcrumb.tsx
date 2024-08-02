@@ -7,6 +7,7 @@ import {
 } from "@fluentui/react-components";
 import { HTMLAttributes } from "react";
 
+
 export interface BreadcrumbItemData {
 	title: string;
 	path?: string;
@@ -31,22 +32,24 @@ export const StoryBreadcrumb = ({
 		small: "text-sm space-x-2 font-normal",
 	};
 
-	return (
-		<Breadcrumb aria-label="Breadcrumb" className={variants[variant]}>
-			{data.map((item, index) => (
-				<React.Fragment key={index}>
-					<BreadcrumbItem>
-						<div {...props}>
-							<BreadcrumbButton href={item.path} icon={item.icon}>
-								{item.title}
-							</BreadcrumbButton>
-						</div>
-					</BreadcrumbItem>
-					{index < data.length - 1 && (
-						<BreadcrumbDivider>{separator}</BreadcrumbDivider>
-					)}
-				</React.Fragment>
-			))}
-		</Breadcrumb>
+	return (	
+		<div className="text-blue-600 hover:text-blue-800 font-sans">
+			<Breadcrumb aria-label="Breadcrumb" className={variants[variant]}>
+				{data.map((item, index) => (
+					<React.Fragment key={index}>
+						<BreadcrumbItem>
+							<div {...props}>
+								<BreadcrumbButton href={item.path} icon={item.icon}>
+									{item.title}
+								</BreadcrumbButton>
+							</div>
+						</BreadcrumbItem>
+						{index < data.length - 1 && (
+							<BreadcrumbDivider>{separator}</BreadcrumbDivider>
+						)}
+					</React.Fragment>
+				))}
+			</Breadcrumb>
+		</div>
 	);
 };
