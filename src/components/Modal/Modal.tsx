@@ -1,7 +1,6 @@
 import React from "react";
 import { useState } from "react";
 import { Button } from "@/stories/Button";
-import { StoryBreadcrumb } from "@/components/Breadcrumbs/Breadcrumb";
 export interface ModalProps {
 	/**
 	 * Modal Header to display what purpose is the modal for
@@ -44,20 +43,10 @@ export const Modal = ({
 	return (
 		<div className="flex items-center justify-center min-h-60">
 			<div>
-				<StoryBreadcrumb
-					variant="medium"
-					data={[
-						{
-							title: "Home",
-						},
-						{
-							title: "Overview",
-						},
-						{
-							title: "Details",
-						},
-					]}
+				<Button
+					label="Open modal"
 					onClick={() => setShowModal(true)}
+					primary={true}
 				/>
 			</div>
 			{showModal && (
@@ -137,7 +126,7 @@ export const Modal = ({
 														? "w-48"
 														: "w-32"
 										} px-5 py-2.5 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm  text-center dark:bg-blue-600 dark:focus:ring-blue-800`}
-										onClick={() => setShowModal(false)}
+										{...props}
 									>
 										{positiveLabel}
 									</button>
