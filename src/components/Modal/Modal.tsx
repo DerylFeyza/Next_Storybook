@@ -2,7 +2,6 @@ import React from "react";
 import { useState } from "react";
 import { Button } from "@/stories/Button";
 import { StoryBreadcrumb } from "@/components/Breadcrumbs/Breadcrumb";
-import "../../app/globals.css";
 export interface ModalProps {
 	/**
 	 * Modal Header to display what purpose is the modal for
